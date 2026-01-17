@@ -1,0 +1,18 @@
+DirectoryIndex index.php index.html
+Options -Indexes
+Options -MultiViews
+
+RewriteEngine On
+
+# 0) Serve existing files/directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 1) Internal map: /page or /page/ -> /page.php (if such PHP file exists)
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# 2) Optional: strip trailing slash for non-directories (keeps .php links working)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ $1 [R=301,L]
