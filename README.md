@@ -31,8 +31,6 @@ January 2026 challenge: consistent practice, better understanding of data struct
 
 ## Tech / Languages
 
-(Feel free to update this section as you add more files)
-
 - Main language: [add your primary one – e.g. Python / Java / C++]
 - Possibly others for comparison/learning
 
